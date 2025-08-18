@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+:root {
+  --primary-color: #FD6E0A;
+  --secondary-color: #474747;
+  --background-color: #FFF8F3;
+}
+
+/* template css code start */
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.open-sans-normal {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.primary-text {
+  color: var(--primary-color);
+}
+
+.primary-button {
+  color: white;
+  font-weight: 600;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  border: none;
+  padding: 15px 30px;
+  cursor: pointer;
+}
+
+/* template css code end */
+
+/* header css code start */
+
+header {
+  background-color: var(--background-color);
+  background-image: url(../images/developer.png), url(../images/header_bg.png);
+  background-repeat: no-repeat;
+  background-position: 23px center, bottom right;
+  background-size: 5.7%, auto;
+
+}
+
+nav {
+  margin: 0 auto;
+  padding: 0 150px;
+}
+
+.nav-title {
+  font-size: 45px;
+  font-weight: 800;
+}
+
+nav ul {
+  gap: 50px;
+}
+
+nav ul li a {
+  color: var(--secondary-color);
+
+}
+
+/* banner */
+.banner {}
+
+.banner-content {
+  width: 585px;
+  margin-left: 150px;
+
+}
+
+.banner-content h3 {
+  font-size: 45px;
+  color: var(--secondary-color);
+  font-weight: 500;
+}
+
+.banner-content h1 {
+  font-size: 85px;
+  font-weight: 700;
+}
+
+.banner-content p {
+  margin: 10px 0;
+}
+
+.banner-img {
+  margin-bottom: 0;
+}
+
+.banner-img {
+  margin: 30px 40px 0 0;
+  width: 584px;
+}
+
+/* header css code end */
+
+/* main css code start */
+
+/* about-me-section>>>>>>>>>>>>>>>>>>>>>>>>> */
+.about-me-section {
+  max-width: 1140px;
+  background-color: var(--background-color);
+  margin: 125px auto 0;
+  border: 1px solid red;
+}
+
+.about-me-section_disription {
+  border: 1px solid red;
+  background-color: white;
+  margin: 130px 155px;
+}
+
+.about-me-section_disription h2 {
+  border: 1px solid red;
+  font-weight: 600;
+  /* display: inline-block; */
+  margin: 0 auto;
+  font-size: 35px;
+}
+
+.about-me-section_disription p {
+  color: var(--secondary-color);
+  font-size: 18px;
+  text-align: center;
+}
+
+.about-me-section_disription_sub-disription span {
+  font-size: 20px;
+  font-weight: 400;
+  display: inline-block;
+  text-align: center;
+}
+
+.about-me-section_disription_sub-disription p {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+
+}
+
+/* main css code end */

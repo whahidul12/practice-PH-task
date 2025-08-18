@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+h1 {
+  padding: 5px 12px;
+  background-color: green;
+  /* width: 100px; */
+
+}
