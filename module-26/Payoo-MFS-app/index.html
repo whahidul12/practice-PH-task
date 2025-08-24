@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ===============DaisyUI CDN===================== -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <!-- ===============tailwind css CDN===================== -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <!-- ================all javascript files===================== -->
+  <script defer src="./javascripts/script.js"></script>
+  <title>Document</title>
+</head>
+
+<body class="bg-[#f4f5f7] h-screen flex flex-col justify-center items-center">
+  <div class="h-[135px] w-[300px] bg-[url(./assets/bg.png)] flex justify-center items-center bg-cover">
+    <img src="./assets/Group.png" class="h-[72px] w-[76px]" alt="Group-Logo">
+  </div>
+  <form action="" class="bg-white w-[402px] mx-auto p-8 rounded-3xl shadow-2xl">
+    <fieldset class="fieldset">
+      <legend class="fieldset-legend text-[16px]">Mobile Number</legend>
+      <input type="text" id="mobile-number" class="input w-full rounded-full bg-[#f4f5f7]"
+        placeholder=" Enter your number" />
+    </fieldset>
+    <fieldset class="fieldset">
+      <legend class="fieldset-legend text-[16px]">4 Digit Pin</legend>
+      <input type="text" id="pin-number" class="input w-full rounded-full bg-[#f4f5f7]"
+        placeholder="Enter 4 Digit Pin" />
+    </fieldset>
+    <input type="submit" value="Login" id="logInBtn"
+      class="btn text-[16px] w-full rounded-full mt-4 bg-blue-500 text-white" />
+  </form>
+</body>
+
+</html>
