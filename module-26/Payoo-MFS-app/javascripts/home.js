@@ -5,16 +5,19 @@ const cardCashout = document.querySelector(".card-cashout");
 const cardTransferMoney = document.querySelector(".card-transfer-money");
 const cardGetBonus = document.querySelector(".card-get-bonus");
 const cardPayBill = document.querySelector(".card-pay-bill");
+const cardTransactions = document.querySelector(".card-transactions");
 
-const defaultSection = document.querySelector(".default-section");
 const addMoneySection = document.querySelector(".add-money-section");
 const cashoutSection = document.querySelector(".cashout-section");
 const transferMoneySection = document.querySelector(".transfer-money-section");
 const getBonusSection = document.querySelector(".get-bonus-section");
 const payBillSection = document.querySelector(".pay-bill-section");
+const transactionsSection = document.querySelector(".transactions-section");
 
 const addMoneyBtn = document.getElementById('add-money-btn')
 const withdrawMoneyBtn = document.getElementById('withdraw-money-btn')
+
+const transactionsDataList = [];
 
 logoutBtn.addEventListener("click", (event) => {
   window.location.href = "../index.html"
@@ -54,11 +57,38 @@ cardPayBill.addEventListener("click", (event) => {
 
 })
 
+cardTransactions.addEventListener("click", (event) => {
+  toggleFuntion(event)
+  transactionsSection.classList.remove("hidden");
+  transactionsSection.classList.add("block");
+  const div = document.createElement("div");
+  div.innerHTML = "";
+
+  for (transaction of transactionsDataList) {
+    div.innerHTML = `
+          <div class="flex justify-between items-center p-6 my-3 bg-white rounded-2xl shadow-2xl">
+          <div class="flex items-center">
+            <div class="h-[46px] w-[46px] bg-[#08080836] rounded-full mr-2 flex justify-center items-center">
+              <img src="${transaction.img}" class="h-[24px] w-[24px]" alt="">
+            </div>
+            <div>
+              <h3 class="text-[16px]">${transaction.name}</h3>
+              <p class="text-[12px]">${transaction.date}</p>
+            </div>
+          </div>
+          <button class="h-[24px] w-[24px] cursor-pointer"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+        </div>
+    `
+    transactionsSection.appendChild(div);
+  }
+
+})
+
 
 function toggleFuntion(button) {
   targetCard = button.currentTarget;
 
-  const childrenSections = defaultSection.parentNode.children;
+  const childrenSections = transactionsSection.parentNode.children;
   for (const child of childrenSections) {
     if (child.classList.contains("block")) {
       child.classList.remove("block");
@@ -106,6 +136,12 @@ addMoneyBtn.addEventListener('click', (event) => {
     accountNumber.value = "";
     addAmount.value = "";
     pinNumber.value = "";
+    const transactionsData = {
+      name: "Add Money",
+      date: new Date().toLocaleTimeString(),
+      img: "../assets/wallet1.png"
+    }
+    transactionsDataList.unshift(transactionsData);
   }
 });
 
@@ -134,7 +170,19 @@ withdrawMoneyBtn.addEventListener("click", (event) => {
     accountNumber.value = "";
     cashoutAomunt.value = "";
     pinNumber.value = "";
+
+    const transactionsData = {
+      name: "Withdraw Money",
+      date: new Date().toLocaleTimeString(),
+      img: "../assets/send1.png"
+    }
+    transactionsDataList.unshift(transactionsData);
   }
 })
+
+
+
+
+
 
 
