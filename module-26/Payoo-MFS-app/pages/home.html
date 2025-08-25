@@ -18,7 +18,7 @@
 </head>
 
 <body class="bg-[#f4f5f7] h-full">
-  <header class="max-w-[450px] mx-auto bg-white rounded-b-2xl">
+  <header class="max-w-[450px] mx-auto bg-white shadow-2xl rounded-b-2xl">
     <nav class="border-b-1 border-gray-300 flex justify-between items-center p-6">
       <div class="flex items-center">
         <img src="../assets/Group.png" class="h-[48px] w-[50px]" alt="Group-Logo">
@@ -28,7 +28,7 @@
         </div>
       </div>
       <div>
-        <button class="btn"><i class="fa-solid fa-arrow-right-from-bracket rotate-180"></i>Log Out</button>
+        <button class="logout-btn btn"><i class="fa-solid fa-arrow-right-from-bracket rotate-180"></i>Log Out</button>
       </div>
     </nav>
     <section class="p-6">
@@ -37,67 +37,133 @@
         is low and
       </p>
       <div class="grid grid-cols-3 gap-4 text-center my-6">
-        <div class="border-2 border-gray-300 rounded-2xl py-5">
+        <div class="card-add-money border-2 border-gray-300 rounded-2xl py-5">
           <img class="mx-auto mb-2" src="../assets/wallet1.png" alt="">
           <p>Add Money</p>
         </div>
-        <div class="border-2 border-gray-300 rounded-2xl py-5">
+        <div class="card-cashout border-2 border-gray-300 rounded-2xl py-5">
           <img class="mx-auto mb-2" src="../assets/send1.png" alt="">
           <p>Cashout</p>
         </div>
-        <div class="border-2 border-gray-300 rounded-2xl py-5">
+        <div class="card-transfer-money border-2 border-gray-300 rounded-2xl py-5">
           <img class="mx-auto mb-2" src="../assets/money1.png" alt="">
           <p>Transfer Money</p>
         </div>
-        <div class="border-2 border-gray-300 rounded-2xl py-5">
+        <div class="card-get-bonus border-2 border-gray-300 rounded-2xl py-5">
           <img class="mx-auto mb-2" src="../assets/bonus1.png" alt="">
           <p>Get Bonus</p>
         </div>
-        <div class="border-2 border-gray-300 rounded-2xl py-5">
+        <div class="card-pay-bill border-2 border-gray-300 rounded-2xl py-5">
           <img class="mx-auto mb-2" src="../assets/purse1.png" alt="">
           <p>Pay Bill</p>
         </div>
-        <div class="border-2 border-gray-300 rounded-2xl py-5">
+        <div class="card-transactions border-2 border-gray-300 rounded-2xl py-5">
           <img class="mx-auto mb-2" src="../assets/transaction1.png" alt="">
           <p>Transactions</p>
         </div>
       </div>
     </section>
   </header>
-  <section class="all-form-section max-w-[450px] mx-auto p-6">
-    <div>
-      <h1 class="text-[24px] mb-6 font-bold">Add Money</h1>
-      <form action="" class="p-6 bg-white rounded-2xl">
-        <fieldset class="fieldset">
-          <legend class="fieldset-legend text-[16px]">Select A Bank</legend>
-          <select id="select-bank" class="select text-[#08080880] w-full rounded-full bg-[#f4f5f7]">
-            <option disabled selected>Select from here</option>
-            <option>Agroni Bank</option>
-            <option>Shonali Bank</option>
-            <option>Rupali Bank</option>
-            <option>Jonota Bank</option>
-          </select>
-        </fieldset>
-        <fieldset class="fieldset">
-          <legend class="fieldset-legend text-[16px]">Bank Account Number</legend>
-          <input id="account-number" type="text" id="pin-number" class="input w-full rounded-full bg-[#f4f5f7]"
-            placeholder="Enter 11 digit account number" />
-        </fieldset>
-        <fieldset class="fieldset">
-          <legend class="fieldset-legend text-[16px]">Amount to Add</legend>
-          <input id="add-amount" type="text" id="pin-number" class="input w-full rounded-full bg-[#f4f5f7]"
-            placeholder="Add Amount to withdraw" />
-        </fieldset>
-        <fieldset class="fieldset">
-          <legend class="fieldset-legend text-[16px]">Pin Number</legend>
-          <input id="pin-number" type="text" id="pin-number" class="input w-full rounded-full bg-[#f4f5f7]"
-            placeholder="Enter 4 digit pin number" />
-        </fieldset>
-        <input type="submit" value="Add Money" id="add-money-btn"
-          class="btn text-[16px] w-full rounded-full mt-4 bg-blue-500 text-white" />
-      </form>
-    </div>
-  </section>
+  <main>
+    <!-- default section start from here -->
+    <!-- default section start from here -->
+    <!-- default section start from here -->
+    <section class="default-section block max-w-[450px] mx-auto">
+      <h1>default</h1>
+    </section>
+    <!-- add money section start from here -->
+    <!-- add money section start from here -->
+    <!-- add money section start from here -->
+    <section class="add-money-section hidden max-w-[450px] mx-auto">
+      <div>
+        <h1 class="text-[24px] m-6 font-bold">Add Money</h1>
+        <form action="" class="p-6 bg-white rounded-2xl">
+          <fieldset class="fieldset">
+            <legend class="fieldset-legend text-[16px]">Select A Bank</legend>
+            <select id="select-bank" class="select w-full rounded-full bg-[#f4f5f7]">
+              <option disabled selected>Select from here</option>
+              <option>Agroni Bank</option>
+              <option>Shonali Bank</option>
+              <option>Rupali Bank</option>
+              <option>Jonota Bank</option>
+            </select>
+          </fieldset>
+          <fieldset class="fieldset">
+            <legend class="fieldset-legend text-[16px]">Bank Account Number</legend>
+            <input id="account-number" type="text" id="pin-number" class="input w-full rounded-full bg-[#f4f5f7]"
+              placeholder="Enter 11 digit account number" />
+          </fieldset>
+          <fieldset class="fieldset">
+            <legend class="fieldset-legend text-[16px]">Amount to Add</legend>
+            <input id="add-amount" type="text" id="pin-number" class="input w-full rounded-full bg-[#f4f5f7]"
+              placeholder="Add Amount to withdraw" />
+          </fieldset>
+          <fieldset class="fieldset">
+            <legend class="fieldset-legend text-[16px]">Pin Number</legend>
+            <input id="pin-number" type="text" id="pin-number" class="input w-full rounded-full bg-[#f4f5f7]"
+              placeholder="Enter 4 digit pin number" />
+          </fieldset>
+          <input type="submit" value="Add Money" id="add-money-btn"
+            class="btn text-[16px] w-full rounded-full mt-4 bg-blue-500 text-white" />
+        </form>
+      </div>
+    </section>
+    <!-- cashout section start from here -->
+    <!-- cashout section start from here -->
+    <!-- cashout section start from here -->
+    <section class="cashout-section hidden max-w-[450px] mx-auto">
+      <div>
+        <h1 class="text-[24px] m-6 font-bold">CashOut</h1>
+        <form action="" class="p-6 bg-white rounded-2xl">
+          <fieldset class="fieldset">
+            <legend class="fieldset-legend text-[16px]">Select A Bank</legend>
+            <select id="select-bank" class="select w-full rounded-full bg-[#f4f5f7]">
+              <option disabled selected>Select from here</option>
+              <option>Agroni Bank</option>
+              <option>Shonali Bank</option>
+              <option>Rupali Bank</option>
+              <option>Jonota Bank</option>
+            </select>
+          </fieldset>
+          <fieldset class="fieldset">
+            <legend class="fieldset-legend text-[16px]">Bank Account Number</legend>
+            <input id="account-number" type="text" id="pin-number" class="input w-full rounded-full bg-[#f4f5f7]"
+              placeholder="Enter 11 digit account number" />
+          </fieldset>
+          <fieldset class="fieldset">
+            <legend class="fieldset-legend text-[16px]">Amount to Add</legend>
+            <input id="add-amount" type="text" id="pin-number" class="input w-full rounded-full bg-[#f4f5f7]"
+              placeholder="Add Amount to withdraw" />
+          </fieldset>
+          <fieldset class="fieldset">
+            <legend class="fieldset-legend text-[16px]">Pin Number</legend>
+            <input id="pin-number" type="text" id="pin-number" class="input w-full rounded-full bg-[#f4f5f7]"
+              placeholder="Enter 4 digit pin number" />
+          </fieldset>
+          <input type="submit" value="Add Money" id="add-money-btn"
+            class="btn text-[16px] w-full rounded-full mt-4 bg-blue-500 text-white" />
+        </form>
+      </div>
+    </section>
+    <!-- transfer money section start from here -->
+    <!-- transfer money section start from here -->
+    <!-- transfer money section start from here -->
+    <section class="transfer-money-section hidden max-w-[450px] mx-auto">
+      <h1>Transfer Money</h1>
+    </section>
+    <!-- Get Bonus section start from here -->
+    <!-- Get Bonus section start from here -->
+    <!-- Get Bonus section start from here -->
+    <section class="get-bonus-section transfer-money-section hidden max-w-[450px] mx-auto">
+      <h1>Get Bonus</h1>
+    </section>
+    <!-- Pay Bill section start from here -->
+    <!-- Pay Bill section start from here -->
+    <!-- Pay Bill section start from here -->
+    <section class="pay-bill-section get-bonus-section transfer-money-section hidden max-w-[450px] mx-auto">
+      <h1>Pay Bill</h1>
+    </section>
+  </main>
 
 </body>
 
