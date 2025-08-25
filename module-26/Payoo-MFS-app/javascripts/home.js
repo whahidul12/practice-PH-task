@@ -13,6 +13,9 @@ const transferMoneySection = document.querySelector(".transfer-money-section");
 const getBonusSection = document.querySelector(".get-bonus-section");
 const payBillSection = document.querySelector(".pay-bill-section");
 
+const addMoneyBtn = document.getElementById('add-money-btn')
+const withdrawMoneyBtn = document.getElementById('withdraw-money-btn')
+
 logoutBtn.addEventListener("click", (event) => {
   window.location.href = "../index.html"
 })
@@ -52,7 +55,6 @@ cardPayBill.addEventListener("click", (event) => {
 })
 
 
-
 function toggleFuntion(button) {
   targetCard = button.currentTarget;
 
@@ -76,36 +78,63 @@ function toggleFuntion(button) {
   targetCard.classList.add("bg-[#0874f20d]");
 }
 
-document.getElementById('add-money-btn')
-  .addEventListener('click', (event) => {
-    event.preventDefault();
+addMoneyBtn.addEventListener('click', (event) => {
+  event.preventDefault();
 
-    const selectBank = document.getElementById("select-bank");
-    const accountNumber = document.getElementById("account-number");
-    const addAmount = document.getElementById("add-amount");
-    const pinNumber = document.getElementById("pin-number");
+  const selectBank = document.getElementById("select-bank");
+  const accountNumber = document.getElementById("account-number");
+  const addAmount = document.getElementById("add-amount");
+  const pinNumber = document.getElementById("pin-number");
 
-    if (selectBank.value === "Select from here" ||
-      isNaN(parseInt(accountNumber.value)) ||
-      isNaN(parseInt(addAmount.value)) ||
-      isNaN(parseInt(pinNumber.value))) {
-      alert("invalide")
-    } else if (accountNumber.value.length !== 12) {
-      alert("Account number has to be 12 Digits");
-    } else if (addAmount.value < 300) {
-      alert("Amount has to be at least 500 taka");
-    } else if (pinNumber.value.length != 4) {
-      alert("Pin Number has to be 4 Digits");
-    }
-    else {
-      const balance = document.getElementById("balance");
-      const currentBalance = parseInt(balance.innerText) + parseInt(addAmount.value);
-      balance.innerText = currentBalance;
-      selectBank.innerText === "Select from here";
-      accountNumber.value = "";
-      addAmount.value = "";
-      pinNumber.value = "";
-    }
-  })
+  if (selectBank.value === "Select from here" ||
+    isNaN(parseInt(accountNumber.value)) ||
+    isNaN(parseInt(addAmount.value)) ||
+    isNaN(parseInt(pinNumber.value))) {
+    alert("invalide")
+  } else if (accountNumber.value.length !== 12) {
+    alert("Account number has to be 12 Digits");
+  } else if (addAmount.value < 300) {
+    alert("Amount has to be at least 500 taka");
+  } else if (pinNumber.value.length != 4) {
+    alert("Pin Number has to be 4 Digits");
+  }
+  else {
+    const balance = document.getElementById("balance");
+    const currentBalance = parseInt(balance.innerText) + parseInt(addAmount.value);
+    balance.innerText = currentBalance;
+    selectBank.innerText === "Select from here";
+    accountNumber.value = "";
+    addAmount.value = "";
+    pinNumber.value = "";
+  }
+});
+
+withdrawMoneyBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+
+  const accountNumber = document.getElementById("cashout-account-number");
+  const cashoutAomunt = document.getElementById("cashout-amount");
+  const pinNumber = document.getElementById("cashout-pin-number");
+  const balance = document.getElementById("balance");
+
+  if (isNaN(parseInt(accountNumber.value)) ||
+    isNaN(parseInt(cashoutAomunt.value)) ||
+    isNaN(parseInt(pinNumber.value))) {
+    alert("invalide")
+  } else if (accountNumber.value.length !== 12) {
+    alert("Account number has to be 12 Digits");
+  } else if (cashoutAomunt.value < 300 && cashoutAomunt.value > 50000 && cashoutAomunt.value > parseInt(balance.innerText)) {
+    alert("incorrect Amount");
+  } else if (pinNumber.value.length != 4) {
+    alert("Pin Number has to be 4 Digits");
+  }
+  else {
+    const currentBalance = parseInt(balance.innerText) - parseInt(cashoutAomunt.value);
+    balance.innerText = currentBalance;
+    accountNumber.value = "";
+    cashoutAomunt.value = "";
+    pinNumber.value = "";
+  }
+})
 
 

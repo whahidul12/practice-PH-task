@@ -116,31 +116,21 @@
         <h1 class="text-[24px] m-6 font-bold">CashOut</h1>
         <form action="" class="p-6 bg-white rounded-2xl">
           <fieldset class="fieldset">
-            <legend class="fieldset-legend text-[16px]">Select A Bank</legend>
-            <select id="select-bank" class="select w-full rounded-full bg-[#f4f5f7]">
-              <option disabled selected>Select from here</option>
-              <option>Agroni Bank</option>
-              <option>Shonali Bank</option>
-              <option>Rupali Bank</option>
-              <option>Jonota Bank</option>
-            </select>
-          </fieldset>
-          <fieldset class="fieldset">
             <legend class="fieldset-legend text-[16px]">Bank Account Number</legend>
-            <input id="account-number" type="text" id="pin-number" class="input w-full rounded-full bg-[#f4f5f7]"
-              placeholder="Enter 11 digit account number" />
+            <input id="cashout-account-number" type="text" id="pin-number"
+              class="input w-full rounded-full bg-[#f4f5f7]" placeholder="Enter 11 digit account number" />
           </fieldset>
           <fieldset class="fieldset">
-            <legend class="fieldset-legend text-[16px]">Amount to Add</legend>
-            <input id="add-amount" type="text" id="pin-number" class="input w-full rounded-full bg-[#f4f5f7]"
+            <legend class="fieldset-legend text-[16px]">Amount for Cashout</legend>
+            <input id="cashout-amount" type="text" id="pin-number" class="input w-full rounded-full bg-[#f4f5f7]"
               placeholder="Add Amount to withdraw" />
           </fieldset>
           <fieldset class="fieldset">
             <legend class="fieldset-legend text-[16px]">Pin Number</legend>
-            <input id="pin-number" type="text" id="pin-number" class="input w-full rounded-full bg-[#f4f5f7]"
+            <input id="cashout-pin-number" type="text" id="pin-number" class="input w-full rounded-full bg-[#f4f5f7]"
               placeholder="Enter 4 digit pin number" />
           </fieldset>
-          <input type="submit" value="Add Money" id="add-money-btn"
+          <input type="submit" value="withdraw Money" id="withdraw-money-btn"
             class="btn text-[16px] w-full rounded-full mt-4 bg-blue-500 text-white" />
         </form>
       </div>
