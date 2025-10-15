@@ -5,7 +5,7 @@ import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import Root from "./Root.jsx";
 import Home from "./Pages/Home/Home.jsx";
-import Aaaa from "./components/Aaaa.jsx";
+import BooksDetails from "./components/BooksDetails/BooksDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -20,7 +20,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/book-details/:bookId",
-        Component: Aaaa,
+        Component: BooksDetails,
       },
     ],
   },
